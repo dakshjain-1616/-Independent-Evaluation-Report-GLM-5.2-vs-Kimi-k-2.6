@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 720" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <rect width="1000" height="720" fill="#ffffff"/>
+  <text x="500" y="48" text-anchor="middle" fill="#0f172a" font-size="28" font-weight="700">Engineering Scorecard</text>
+  <text x="500" y="78" text-anchor="middle" fill="#64748b" font-size="16">Scored on engineering merit — not output polish</text>
+
+  <!-- column headers -->
+  <text x="350" y="120" text-anchor="middle" fill="#047857" font-size="17" font-weight="700">GLM 5.2</text>
+  <text x="700" y="120" text-anchor="middle" fill="#1d4ed8" font-size="17" font-weight="700">Kimi K2.6</text>
+  <text x="40" y="120" fill="#64748b" font-size="13" font-weight="600">DIMENSION</text>
+
+  <!-- rows -->
+  <!-- helper: win pill rendered inline -->
+  <g font-size="14">
+    <!-- Architecture -->
+    <text x="40" y="162" fill="#1f2937" font-weight="600">Architecture</text>
+    <rect x="250" y="146" width="200" height="26" rx="13" fill="#f1f5f9"/><text x="350" y="164" text-anchor="middle" fill="#64748b">single-pass</text>
+    <rect x="600" y="146" width="200" height="26" rx="13" fill="#dbeafe"/><text x="700" y="164" text-anchor="middle" fill="#1d4ed8" font-weight="700">staged pipeline ★</text>
+
+    <!-- Reproducibility -->
+    <text x="40" y="206" fill="#1f2937" font-weight="600">Reproducibility</text>
+    <rect x="250" y="190" width="200" height="26" rx="13" fill="#f1f5f9"/><text x="350" y="208" text-anchor="middle" fill="#64748b">output only</text>
+    <rect x="600" y="190" width="200" height="26" rx="13" fill="#dbeafe"/><text x="700" y="208" text-anchor="middle" fill="#1d4ed8" font-weight="700">per-stage artifacts ★</text>
+
+    <!-- Deduplication -->
+    <text x="40" y="250" fill="#1f2937" font-weight="600">Deduplication</text>
+    <rect x="250" y="234" width="200" height="26" rx="13" fill="#fee2e2"/><text x="350" y="252" text-anchor="middle" fill="#b91c1c">not implemented</text>
+    <rect x="600" y="234" width="200" height="26" rx="13" fill="#dbeafe"/><text x="700" y="252" text-anchor="middle" fill="#1d4ed8" font-weight="700">SHA-256 hash ★</text>
+
+    <!-- Error handling -->
+    <text x="40" y="294" fill="#1f2937" font-weight="600">Error handling</text>
+    <rect x="250" y="278" width="200" height="26" rx="13" fill="#fee2e2"/><text x="350" y="296" text-anchor="middle" fill="#b91c1c">none on parse</text>
+    <rect x="600" y="278" width="200" height="26" rx="13" fill="#dbeafe"/><text x="700" y="296" text-anchor="middle" fill="#1d4ed8" font-weight="700">try/except + types ★</text>
+
+    <!-- Data correctness -->
+    <text x="40" y="338" fill="#1f2937" font-weight="600">Data correctness (Art. 75)</text>
+    <rect x="250" y="322" width="200" height="26" rx="13" fill="#fee2e2"/><text x="350" y="340" text-anchor="middle" fill="#b91c1c">wrong (95), silent</text>
+    <rect x="600" y="322" width="200" height="26" rx="13" fill="#dcfce7"/><text x="700" y="340" text-anchor="middle" fill="#15803d" font-weight="700">correct (0) ★</text>
+
+    <!-- Data modeling -->
+    <text x="40" y="382" fill="#1f2937" font-weight="600">Data modeling</text>
+    <rect x="250" y="366" width="200" height="26" rx="13" fill="#f1f5f9"/><text x="350" y="384" text-anchor="middle" fill="#64748b">flattened fields</text>
+    <rect x="600" y="366" width="200" height="26" rx="13" fill="#dbeafe"/><text x="700" y="384" text-anchor="middle" fill="#1d4ed8" font-weight="700">nested _metadata ★</text>
+
+    <!-- Self verification -->
+    <text x="40" y="426" fill="#1f2937" font-weight="600">Self-verification</text>
+    <rect x="250" y="410" width="200" height="26" rx="13" fill="#dcfce7"/><text x="350" y="428" text-anchor="middle" fill="#15803d" font-weight="700">re-reads output ★</text>
+    <rect x="600" y="410" width="200" height="26" rx="13" fill="#f1f5f9"/><text x="700" y="428" text-anchor="middle" fill="#64748b">summary only</text>
+
+    <!-- Documentation -->
+    <text x="40" y="470" fill="#1f2937" font-weight="600">Documentation</text>
+    <rect x="250" y="454" width="200" height="26" rx="13" fill="#dcfce7"/><text x="350" y="472" text-anchor="middle" fill="#15803d" font-weight="700">docstrings + types ★</text>
+    <rect x="600" y="454" width="200" height="26" rx="13" fill="#f1f5f9"/><text x="700" y="472" text-anchor="middle" fill="#64748b">sparser</text>
+
+    <!-- Portability -->
+    <text x="40" y="514" fill="#1f2937" font-weight="600">Portability</text>
+    <rect x="250" y="498" width="200" height="26" rx="13" fill="#dcfce7"/><text x="350" y="516" text-anchor="middle" fill="#15803d" font-weight="700">relative paths ★</text>
+    <rect x="600" y="498" width="200" height="26" rx="13" fill="#fee2e2"/><text x="700" y="516" text-anchor="middle" fill="#b91c1c">hardcoded paths</text>
+
+    <!-- Operational risk -->
+    <text x="40" y="558" fill="#1f2937" font-weight="600">Operational risk</text>
+    <rect x="250" y="542" width="200" height="26" rx="13" fill="#fef9c3"/><text x="350" y="560" text-anchor="middle" fill="#a16207">silent bad data</text>
+    <rect x="600" y="542" width="200" height="26" rx="13" fill="#fef9c3"/><text x="700" y="560" text-anchor="middle" fill="#a16207">loud false alarm</text>
+  </g>
+
+  <!-- summary band -->
+  <rect x="40" y="596" width="920" height="96" rx="12" fill="#0f172a"/>
+  <text x="60" y="626" fill="#93c5fd" font-size="14" font-weight="700">Engineering capability → Kimi K2.6</text>
+  <text x="60" y="654" fill="#86efac" font-size="14" font-weight="700">Code craftsmanship → GLM 5.2</text>
+  <text x="60" y="682" fill="#d8b4fe" font-size="14" font-weight="700">Production trust → depends on visibility-of-failure vs simplicity</text>
+  <text x="640" y="640" fill="#64748b" font-size="13">★ = stronger on this dimension</text>
+  <text x="640" y="668" fill="#64748b" font-size="13">Capability vs craftsmanship —</text>
+  <text x="640" y="686" fill="#64748b" font-size="13">two archetypes, not one winner.</text>
+</svg>

@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Env / secrets (BYOK keys must never be committed)
+.env
+.env.*
+*.key
+
+# OS / editor
+.DS_Store
+.idea/
+*.swp

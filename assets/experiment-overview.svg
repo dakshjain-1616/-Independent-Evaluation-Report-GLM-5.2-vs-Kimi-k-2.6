@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="kimi" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="glm" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#059669"/>
+      <stop offset="1" stop-color="#047857"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="700" fill="url(#bg)"/>
+
+  <!-- Header -->
+  <text x="600" y="64" text-anchor="middle" fill="#f8fafc" font-size="34" font-weight="700">Same Workflow, One Variable</text>
+  <text x="600" y="98" text-anchor="middle" fill="#94a3b8" font-size="18">GLM 5.2 vs Kimi K2.6 — run inside the identical NEO agent workflow via MCP BYOK</text>
+
+  <!-- Constants band -->
+  <rect x="80" y="130" width="1040" height="70" rx="12" fill="#1e293b" stroke="#334155"/>
+  <text x="110" y="158" fill="#64748b" font-size="13" font-weight="600" letter-spacing="1">HELD CONSTANT</text>
+  <g fill="#cbd5e1" font-size="15">
+    <text x="110" y="184">Same repository</text>
+    <text x="290" y="184">Same prompt</text>
+    <text x="430" y="184">Same tools &amp; MCP env</text>
+    <text x="650" y="184">Same multi-phase workflow</text>
+    <text x="920" y="184">Same environment</text>
+  </g>
+
+  <!-- Two model cards -->
+  <g>
+    <rect x="80" y="240" width="480" height="170" rx="16" fill="#1e293b" stroke="url(#glm)" stroke-width="2"/>
+    <circle cx="128" cy="288" r="14" fill="url(#glm)"/>
+    <text x="158" y="294" fill="#f8fafc" font-size="24" font-weight="700">GLM 5.2</text>
+    <text x="110" y="332" fill="#86efac" font-size="15" font-weight="600">Archetype: The Craftsman</text>
+    <text x="110" y="362" fill="#cbd5e1" font-size="14">Single clean tool · portable · streaming I/O ·</text>
+    <text x="110" y="384" fill="#cbd5e1" font-size="14">strong docs · calibrated · no false alarms</text>
+  </g>
+
+  <g>
+    <rect x="640" y="240" width="480" height="170" rx="16" fill="#1e293b" stroke="url(#kimi)" stroke-width="2"/>
+    <circle cx="688" cy="288" r="14" fill="url(#kimi)"/>
+    <text x="718" y="294" fill="#f8fafc" font-size="24" font-weight="700">Kimi K2.6</text>
+    <text x="670" y="332" fill="#93c5fd" font-size="15" font-weight="600">Archetype: The Systems Builder</text>
+    <text x="670" y="362" fill="#cbd5e1" font-size="14">Staged pipeline · checkpointed artifacts ·</text>
+    <text x="670" y="384" fill="#cbd5e1" font-size="14">SHA-256 dedup · robust parser · self-corrects</text>
+  </g>
+
+  <text x="600" y="300" text-anchor="middle" fill="#475569" font-size="22" font-weight="700">vs</text>
+
+  <!-- Verdict row -->
+  <text x="80" y="470" fill="#64748b" font-size="13" font-weight="600" letter-spacing="1">THE OUTCOME</text>
+
+  <g>
+    <rect x="80" y="488" width="330" height="150" rx="14" fill="#0b2545" stroke="#1d4ed8" stroke-width="1.5"/>
+    <text x="245" y="522" text-anchor="middle" fill="#93c5fd" font-size="14" font-weight="600">ENGINEERING CAPABILITY</text>
+    <text x="245" y="560" text-anchor="middle" fill="#f8fafc" font-size="26" font-weight="700">Kimi K2.6</text>
+    <text x="245" y="596" text-anchor="middle" fill="#cbd5e1" font-size="13">Dedup, robust parser,</text>
+    <text x="245" y="616" text-anchor="middle" fill="#cbd5e1" font-size="13">reproducible pipeline</text>
+  </g>
+
+  <g>
+    <rect x="435" y="488" width="330" height="150" rx="14" fill="#0c2a20" stroke="#047857" stroke-width="1.5"/>
+    <text x="600" y="522" text-anchor="middle" fill="#86efac" font-size="14" font-weight="600">CODE CRAFTSMANSHIP</text>
+    <text x="600" y="560" text-anchor="middle" fill="#f8fafc" font-size="26" font-weight="700">GLM 5.2</text>
+    <text x="600" y="596" text-anchor="middle" fill="#cbd5e1" font-size="13">Portable, documented,</text>
+    <text x="600" y="616" text-anchor="middle" fill="#cbd5e1" font-size="13">never overstated</text>
+  </g>
+
+  <g>
+    <rect x="790" y="488" width="330" height="150" rx="14" fill="#2a1530" stroke="#7c3aed" stroke-width="1.5"/>
+    <text x="955" y="522" text-anchor="middle" fill="#d8b4fe" font-size="14" font-weight="600">PRODUCTION TRUST</text>
+    <text x="955" y="560" text-anchor="middle" fill="#f8fafc" font-size="26" font-weight="700">Depends</text>
+    <text x="955" y="596" text-anchor="middle" fill="#cbd5e1" font-size="13">Visibility of failure vs</text>
+    <text x="955" y="616" text-anchor="middle" fill="#cbd5e1" font-size="13">simplicity of implementation</text>
+  </g>
+
+  <text x="600" y="678" text-anchor="middle" fill="#475569" font-size="13">Independently verified · both runs Grade B · neither merge-ready without edits</text>
+</svg>

@@ -1,0 +1,17 @@
+{
+  "gpt-4.1": {
+    "input_records": 100,
+    "duplicates_removed": 0,
+    "output_records": 100
+  },
+  "gpt-5": {
+    "input_records": 100,
+    "duplicates_removed": 0,
+    "output_records": 100
+  },
+  "claude4-sonnet": {
+    "input_records": 98,
+    "duplicates_removed": 0,
+    "output_records": 98
+  }
+}

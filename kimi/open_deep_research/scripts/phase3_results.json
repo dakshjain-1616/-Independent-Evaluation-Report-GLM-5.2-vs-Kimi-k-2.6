@@ -1,0 +1,95 @@
+{
+  "schema_issues": {},
+  "id_gaps": {
+    "gpt-4.1": {
+      "count": 100,
+      "unique": 100,
+      "duplicates": [],
+      "min": 1,
+      "max": 100,
+      "missing_from_1_100": []
+    },
+    "gpt-5": {
+      "count": 100,
+      "unique": 100,
+      "duplicates": [],
+      "min": 1,
+      "max": 100,
+      "missing_from_1_100": []
+    },
+    "claude4-sonnet": {
+      "count": 98,
+      "unique": 98,
+      "duplicates": [],
+      "min": 1,
+      "max": 100,
+      "missing_from_1_100": [
+        57,
+        98
+      ]
+    }
+  },
+  "prompt_mismatches": [],
+  "exact_dupes": {
+    "gpt-4.1": [],
+    "gpt-5": [],
+    "claude4-sonnet": []
+  },
+  "near_dupes": {
+    "gpt-4.1": [],
+    "gpt-5": [],
+    "claude4-sonnet": []
+  },
+  "empty_issues": {},
+  "ref_issues": {
+    "gpt-4.1": [
+      "Line 51: citations found but no Sources section",
+      "Line 53: citations found but no Sources section",
+      "Line 54: citations found but no Sources section",
+      "Line 60: citations found but no Sources section",
+      "Line 64: citations found but no Sources section",
+      "Line 65: citations found but no Sources section",
+      "Line 67: citations found but no Sources section",
+      "Line 69: citations found but no Sources section",
+      "Line 70: citations found but no Sources section",
+      "Line 71: citations found but no Sources section",
+      "Line 74: citations found but no Sources section",
+      "Line 75: citations found but no Sources section",
+      "Line 77: citations found but no Sources section",
+      "Line 79: citations found but no Sources section",
+      "Line 80: citations found but no Sources section",
+      "Line 85: citations found but no Sources section",
+      "Line 86: citations found but no Sources section",
+      "Line 87: citations found but no Sources section",
+      "Line 88: citations found but no Sources section",
+      "Line 90: citations found but no Sources section",
+      "Line 91: citations found but no Sources section",
+      "Line 98: citations found but no Sources section",
+      "Line 99: citations found but no Sources section",
+      "Line 100: citations found but no Sources section"
+    ],
+    "gpt-5": [
+      "Line 61: citations found but no Sources section",
+      "Line 62: citations found but no Sources section",
+      "Line 67: citations found but no Sources section",
+      "Line 69: citations found but no Sources section",
+      "Line 70: citations found but no Sources section",
+      "Line 74: citations found but no Sources section",
+      "Line 81: citations found but no Sources section",
+      "Line 83: citations found but no Sources section",
+      "Line 86: citations found but no Sources section"
+    ],
+    "claude4-sonnet": [
+      "Line 49: citations found but no Sources section",
+      "Line 55: citations found but no Sources section",
+      "Line 56: citations found but no Sources section",
+      "Line 60: citations found but no Sources section",
+      "Line 63: citations found but no Sources section",
+      "Line 68: citations found but no Sources section",
+      "Line 71: citations found but no Sources section",
+      "Line 75: citations found but no Sources section",
+      "Line 83: citations found but no Sources section",
+      "Line 96: citations found but no Sources section"
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="640" fill="#ffffff"/>
+  <text x="600" y="50" text-anchor="middle" fill="#0f172a" font-size="30" font-weight="700">The Bug That Tells the Whole Story</text>
+  <text x="600" y="82" text-anchor="middle" fill="#64748b" font-size="17">One correct record. Two pipelines. Three different answers.</text>
+
+  <!-- Input record -->
+  <rect x="430" y="120" width="340" height="120" rx="14" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="600" y="150" text-anchor="middle" fill="#0f172a" font-size="18" font-weight="700">Article 75 (GPT-5)</text>
+  <text x="600" y="178" text-anchor="middle" fill="#334155" font-size="14">Body cites [1]…[95]</text>
+  <text x="600" y="200" text-anchor="middle" fill="#334155" font-size="14">Sources listed as 1. 2. … 95.  (numbered list)</text>
+  <text x="600" y="224" text-anchor="middle" fill="#16a34a" font-size="14" font-weight="700">Ground truth: all citations resolve · 0 broken</text>
+
+  <!-- connectors -->
+  <path d="M520,240 C460,290 320,300 260,330" fill="none" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M600,240 L600,330" fill="none" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M680,240 C740,290 880,300 940,330" fill="none" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Outcome 1: Kimi phase4 wrong -->
+  <rect x="70" y="340" width="360" height="200" rx="14" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+  <text x="90" y="372" fill="#1d4ed8" font-size="14" font-weight="700">Kimi K2.6 · phase4_audit.py</text>
+  <text x="90" y="400" fill="#0f172a" font-size="16" font-weight="700">"95 cites, 0 resolved"</text>
+  <text x="90" y="424" fill="#dc2626" font-size="16" font-weight="700">100% FAILURE — CRITICAL</text>
+  <text x="90" y="456" fill="#475569" font-size="13">Parser matched only [N] in the</text>
+  <text x="90" y="476" fill="#475569" font-size="13">sources block → numbered list</text>
+  <text x="90" y="496" fill="#475569" font-size="13">invisible → false alarm.</text>
+  <text x="90" y="524" fill="#b91c1c" font-size="13" font-weight="700">WRONG · loud</text>
+
+  <!-- Outcome 2: Kimi phase6 correct -->
+  <rect x="450" y="340" width="300" height="200" rx="14" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <text x="470" y="372" fill="#1d4ed8" font-size="14" font-weight="700">Kimi K2.6 · phase6_improve.py</text>
+  <text x="470" y="400" fill="#0f172a" font-size="16" font-weight="700">missing_ref_count: 0</text>
+  <text x="470" y="432" fill="#475569" font-size="13">Final enrichment parser matches</text>
+  <text x="470" y="452" fill="#475569" font-size="13">[N], N. and N) formats →</text>
+  <text x="470" y="472" fill="#475569" font-size="13">numbered list resolves correctly.</text>
+  <text x="470" y="524" fill="#15803d" font-size="13" font-weight="700">CORRECT · but never reconciled with phase4</text>
+
+  <!-- Outcome 3: GLM wrong silent -->
+  <rect x="770" y="340" width="360" height="200" rx="14" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+  <text x="790" y="372" fill="#047857" font-size="14" font-weight="700">GLM 5.2 · metadata_enrichment.py</text>
+  <text x="790" y="400" fill="#0f172a" font-size="16" font-weight="700">broken_citation_count: 95</text>
+  <text x="790" y="432" fill="#475569" font-size="13">[N]-only parser, single pass.</text>
+  <text x="790" y="452" fill="#475569" font-size="13">Wrong value written into the</text>
+  <text x="790" y="472" fill="#475569" font-size="13">shipped dataset — never surfaced.</text>
+  <text x="790" y="524" fill="#b91c1c" font-size="13" font-weight="700">WRONG · silent</text>
+
+  <!-- bottom takeaway -->
+  <rect x="70" y="566" width="1060" height="54" rx="10" fill="#0f172a"/>
+  <text x="600" y="599" text-anchor="middle" fill="#e2e8f0" font-size="15">The model that raised the false alarm had already written the correct parser. The one that stayed quiet shipped wrong data — and never noticed.</text>
+</svg>

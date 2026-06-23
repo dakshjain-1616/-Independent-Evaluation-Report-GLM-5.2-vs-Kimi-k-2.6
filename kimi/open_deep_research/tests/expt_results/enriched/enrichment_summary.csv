@@ -1,0 +1,4 @@
+model_name,input_records,duplicates_removed,output_records
+gpt-4.1,100,0,100
+gpt-5,100,0,100
+claude4-sonnet,98,0,98
