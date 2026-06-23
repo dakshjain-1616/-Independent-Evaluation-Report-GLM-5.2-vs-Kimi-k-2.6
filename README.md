@@ -25,12 +25,7 @@ The headline isn't "which model won" (the scores were close, both passed, neithe
 
 The comparison was only possible because of how the work was executed. Both runs used the **NEO VS Code extension**, driven through NEO's **MCP BYOK (bring-your-own-key)** feature — which lets you point the same agent workflow at *any* model you choose. That's what made this an apples-to-apples test: BYOK holds the entire harness constant and swaps only the model behind the key.
 
-NEO is the **evaluation platform** here, not a contestant in the benchmark — the wind tunnel in which you change one airfoil and trust nothing else moved.
-
-**Get NEO:**
-- VS Code extension → https://marketplace.visualstudio.com/items?itemName=NeoResearchInc.heyneo
-- Cursor extension → https://marketplace.cursorapi.com/items/?itemName=NeoResearchInc.heyneo
-- Website → https://heyneo.com
+NEO is the **evaluation platform** here, not a contestant in the benchmark — the wind tunnel in which you change one airfoil and trust nothing else moved. Get it via the badges at the top of this README ([VS Code](https://marketplace.visualstudio.com/items?itemName=NeoResearchInc.heyneo) · [Cursor](https://marketplace.cursorapi.com/items/?itemName=NeoResearchInc.heyneo) · [heyneo.com](https://heyneo.com)).
 
 ---
 
