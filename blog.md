@@ -2,6 +2,8 @@
 
 ### What an identical agent task taught us about evaluating AI systems by their process, not their output
 
+*Independent third-party evaluation · June 2026 · ~12 min read*
+
 ![GLM 5.2 vs Kimi K2.6 — same NEO workflow, BYOK, one variable](assets/experiment-overview.svg)
 
 ---
@@ -28,6 +30,8 @@ Both models ran inside the **NEO VS Code extension**, driven through NEO's **MCP
 - **Only the underlying model changed** — **GLM 5.2** in one run, **Kimi K2.6** in the other
 
 NEO is the evaluation platform here, not a contestant — the wind tunnel in which you change one airfoil and trust that nothing else moved. The task was a genuine data-engineering assignment: inventory the agent's benchmark datasets, audit their integrity, deduplicate, enrich with quality metadata, score for hallucination and traceability risk, then adversarially review the work and prove every claim. Real pipelines, real artifacts, real code.
+
+One honest bound before we start: this is **one task and one run per model**, so read what follows as a deep qualitative comparison, not a leaderboard. Every number below was independently recomputed from the raw artifacts rather than taken from either model's own report — you can reproduce the central one yourself with [`verify_article_75.py`](verify_article_75.py).
 
 ---
 
@@ -211,14 +215,7 @@ A category-by-category read, scored on engineering merit rather than output poli
 | Operational Risk | Tie | Silent bad data (GLM) vs loud false alarm (Kimi) — different hazards |
 | Production Readiness | Neither | Both require edits before merge |
 
-### Overall Engineering Capability — **Kimi K2.6**
-More capable system: real deduplication, robust multi-format parsing, reproducible staged architecture, richer metrics, and a final dataset that is actually correct on Article 75.
-
-### Overall Code Quality — **GLM 5.2**
-Cleaner, more portable, better-documented, memory-efficient code that never overstated a result. The artifact you'd more happily read and maintain.
-
-### Overall Production Readiness — **Neither, without modification**
-Kimi needs a cross-stage reconciliation gate and portable paths. GLM needs the deduplication, the robust parser, and input error handling. Both are realistic starting points, not finished systems — which is the honest state of agent-written engineering code today.
+The one-line read: Kimi is ahead on capability, GLM on craftsmanship, and neither is production-ready without edits. The full three-way verdict is below — first, why those category calls land the way they do.
 
 ---
 
@@ -276,3 +273,7 @@ GLM's wrong number was invisible until we re-ran its parser. Kimi's correct answ
 This is the shift that matters as AI agents move into production engineering. For a chatbot, evaluating the final answer is enough. For an agent that writes pipelines, audits data, and ships artifacts other systems depend on, the final answer is the *least* informative thing it produces. Two agents can hand you outputs that look equally finished and equally correct, and be wrong in opposite, invisible ways — one loudly, one silently — for reasons that live entirely in how the work was done.
 
 So the concrete takeaway is this: **if you're evaluating agents, require intermediate artifacts, independent recomputation of every metric, and reconciliation checks between stages. Otherwise both of these runs would have looked successful** — and one of them would have shipped a wrong number into your data while the other paged you about a problem that wasn't there. Article 75 is a small bug in a benchmark dataset. It's also a preview of the only evaluation question that will matter as agents move into production: not "is the answer right?" but "can I tell when it's wrong?"
+
+---
+
+*The full audit — every category score, the hallucination analysis, and the verified evidence behind each claim — is in [`report.md`](report.md). The one-command reproduction is [`verify_article_75.py`](verify_article_75.py). This is one task and one run per model: a deep qualitative comparison, not a leaderboard.*

@@ -42,6 +42,22 @@ The model that raised the false alarm had already written the correct parser. Th
 
 ---
 
+## Reproduce this
+
+Don't take the finding on trust — that's the whole thesis. Re-derive it yourself in one command:
+
+```bash
+git clone https://github.com/dakshjain-1616/-Independent-Evaluation-Report-GLM-5.2-vs-Kimi-k-2.6.git
+cd -Independent-Evaluation-Report-GLM-5.2-vs-Kimi-k-2.6
+python3 verify_article_75.py
+```
+
+[`verify_article_75.py`](verify_article_75.py) is dependency-free and uses relative paths. It recomputes the ground truth straight from the raw article, then reads back what each model's final dataset recorded — printing the three conflicting answers side by side.
+
+> **Note on the models' own scripts:** the per-model audit scripts under `GLM/improvements/` and `kimi/open_deep_research/scripts/` are preserved exactly as each model wrote them — including Kimi's hardcoded absolute paths (one of the findings). They are artifacts to inspect, not portable tools; use `verify_article_75.py` to re-run the check portably.
+
+---
+
 ## The scorecard
 
 ![Engineering scorecard](assets/engineering-scorecard.svg)
@@ -61,9 +77,11 @@ Two engineering archetypes emerged: **The Systems Builder** (Kimi — instrument
 ```
 .
 ├── README.md                  ← you are here
+├── verify_article_75.py       ← dependency-free script that reproduces the central finding
 ├── report.md                  ← full independent audit: scores, evidence, hallucination analysis, verdict
 ├── blog.md                    ← the engineering narrative / write-up (publish-ready)
 ├── social-kit.md              ← promotion collateral (LinkedIn, X thread, pull quotes)
+├── LICENSE                    ← CC BY 4.0 (writing & analysis)
 ├── assets/                    ← SVG infographics
 │   ├── experiment-overview.svg
 │   ├── article-75-fork.svg
@@ -99,4 +117,17 @@ As AI agents move into production engineering workflows, the question that matte
 
 ---
 
-*Evaluation harness: [NEO](https://heyneo.com) (VS Code / Cursor) · MCP BYOK. Subject repo: [`langchain-ai/open_deep_research`](https://github.com/langchain-ai/open_deep_research). All quantitative claims independently recomputed from the raw artifacts.*
+## Methodology & limitations
+
+Read this as a deep, qualitative engineering comparison — not a leaderboard.
+
+- **Sample size is one run per model, on one task.** The archetypes ("Systems Builder" / "Craftsman") are drawn from a single execution each; they're directional, not statistically established.
+- **Every quantitative claim was independently recomputed** from the raw artifacts (raw JSONL, source code, enriched files, and the NEO run transcripts) — not taken from either model's own report. `verify_article_75.py` reproduces the central one.
+- **Model version labels (GLM 5.2 / Kimi K2.6) were provided, not extracted** from the run artifacts, which were tagged only `GLM` and `kimi`. The model *families* are certain; the exact checkpoints rest on that attribution.
+- **The `GLM/` and `kimi/open_deep_research/` folders are each a vendored copy** of the upstream [`open_deep_research`](https://github.com/langchain-ai/open_deep_research) repo plus that model's generated outputs — that's why a full codebase appears under each.
+
+Full scores, evidence, and the hallucination analysis are in [`report.md`](report.md).
+
+---
+
+*Evaluation harness: [NEO](https://heyneo.com) (VS Code / Cursor) · MCP BYOK. Subject repo: [`langchain-ai/open_deep_research`](https://github.com/langchain-ai/open_deep_research). Independent third-party audit, June 2026. Writing and analysis licensed under [CC BY 4.0](LICENSE); see LICENSE for details.*
