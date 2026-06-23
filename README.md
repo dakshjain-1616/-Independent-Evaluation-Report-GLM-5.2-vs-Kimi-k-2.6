@@ -1,5 +1,9 @@
 # GLM 5.2 vs Kimi K2.6 — Same Agent Workflow, One Variable
 
+[![NEO for VS Code](https://img.shields.io/badge/NEO-VS%20Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)](https://marketplace.visualstudio.com/items?itemName=NeoResearchInc.heyneo)
+[![NEO for Cursor](https://img.shields.io/badge/NEO-Cursor-0098FF?style=for-the-badge&logo=cursor&logoColor=white)](https://marketplace.cursorapi.com/items/?itemName=NeoResearchInc.heyneo)
+[![Website](https://img.shields.io/badge/heyneo.com-6E56CF?style=for-the-badge&logo=googlechrome&logoColor=white)](https://heyneo.com)
+
 An independent, evidence-first comparison of two frontier LLMs running the **exact same engineering task** inside the **same agent workflow**. The only thing that changed between the two runs was the underlying model.
 
 ![Experiment overview](assets/experiment-overview.svg)
